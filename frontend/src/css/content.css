@@ -1,0 +1,165 @@
+.one-post button {
+  border-radius: 10px;
+}
+
+.one-post {
+  width: 100%;
+  margin: auto;
+  background-color: #0000008c;
+  border-radius: 8px;
+  padding: 40px;
+  margin-top: 30px;
+  color: var(--font-dark-light);
+  border: 1px solid #4c87a98c;
+}
+
+.one-post h6 {
+  border-top: 1px solid var(--font-dark-light);
+  border-bottom: 1px solid var(--font-dark-light);
+  margin: 30px 0 10px 0;
+  padding: 10px 0 10px 0;
+}
+
+.one-post button {
+  background-color: var(--brand-color);
+  border-radius: var(--input-radius);
+  color: var(--font-light);
+  margin-top: 15px;
+  padding: 3px 6px;
+  margin-right: 5px;
+  border: 0;
+  display: inline-block;
+  font-size: var(--font-XS);
+}
+
+.comment-post input {
+  width: 90%;
+  margin: 10px 0;
+  font-size: var(--font-S);
+  display: inline-block;
+}
+
+.post-text {
+  color: var(--font-dark-light);
+}
+
+.poster {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.post-menu {
+  display: flex;
+  column-gap: 10px;
+}
+
+.post-option {
+  width: 100%;
+  text-align: right;
+}
+
+.reaction {
+  width: 100%;
+}
+
+.comment {
+  display: flex;
+  margin-top: 20px;
+}
+
+.one-comment {
+  margin: 0;
+  width: 100%;
+}
+
+.one-post .one-comment-button {
+  margin: 5px 5px 0 0;
+  padding: 2px;
+  font-size: 6px;
+  background-color: transparent;
+}
+
+.comment-text {
+  background-color: #4c87a998;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+.quick-post {
+  text-align: center;
+  font-size: var(--font-S);
+}
+
+.quick-post button {
+  background-color: var(--brand-color);
+  border: none;
+  margin-top: 20px;
+}
+
+.quick-post textarea {
+  background-color: #4c87a998;
+  border: none;
+  color: white;
+}
+
+.quick-post textarea:focus {
+  background-color: #4c87a9;
+  border: none;
+  color: white;
+}
+
+.quick-post textarea::placeholder {
+  color: rgb(172, 172, 172);
+}
+
+.comment-poster {
+  background-color: #000000;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: var(--font-S);
+  text-align: center;
+  width: 70px;
+}
+
+.comment-post {
+  margin-top: 20px;
+}
+
+.comment-post input {
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #4c87a998;
+  border: none;
+}
+
+.comment-post input:focus {
+  background-color: #4c87a9;
+  border: none;
+}
+
+.comment-post input::placeholder {
+  color: rgb(172, 172, 172);
+}
+
+.comment-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-option-email {
+  display: inline;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.comment-edit {
+  display: inline;
+  text-align: right;
+}
+
+.comment-edit button {
+  display: inline;
+}
