@@ -1,12 +1,11 @@
 package se.kth.sda.tech.comments;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import se.kth.sda.tech.articles.Article;
+import se.kth.sda.tech.posts.Post;
 import se.kth.sda.tech.reactions.Reaction;
 import se.kth.sda.tech.user.User;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Comment {
@@ -22,8 +21,8 @@ public class Comment {
     private String authorName;
 
     @ManyToOne
-    @JoinColumn(name = "article_id")
-    private Article article;
+    @JoinColumn(name = "post_id")
+    private Post post;
 
     @OneToOne
     private User user;
@@ -37,12 +36,12 @@ public class Comment {
         reaction = new Reaction();
     }
 
-    public Comment(Long id, String title, String body, String authorName, Article article, Reaction reaction) {
+    public Comment(Long id, String title, String body, String authorName, Post article, Reaction reaction) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.authorName = authorName;
-        this.article = article;
+        this.post = post;
         this.reaction = reaction;
     }
 
@@ -94,7 +93,7 @@ public class Comment {
         this.reaction = reaction;
     }
 
-    public void setArticle(Article article) {
-        this.article = article;
+    public void setArticle(Post post) {
+        this.post = post;
     }
 }

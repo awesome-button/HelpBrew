@@ -1,16 +1,15 @@
-package se.kth.sda.tech.articles;
+package se.kth.sda.tech.posts;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import se.kth.sda.tech.comments.Comment;
 import se.kth.sda.tech.reactions.Reaction;
-import se.kth.sda.tech.topics.Topic;
 import se.kth.sda.tech.user.User;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Article {
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,12 +21,11 @@ public class Article {
 
     private String authorName;
 
-    @OneToMany
-    @JoinColumn(name = "article_id")
-    private List<Comment> comments;
+    private String type;
 
-    @ManyToMany
-    private List<Topic> topics;
+    @OneToMany
+    @JoinColumn(name = "post_id")
+    private List<Comment> comments;
 
     @OneToOne
     private User user;
@@ -37,16 +35,17 @@ public class Article {
     @JoinColumn(name = "reaction_id", referencedColumnName = "id")
     private Reaction reaction;
 
-    public Article() {
+    public Post() {
         reaction = new Reaction();
     }
 
-    public Article(Long id, String title, String body, String authorName, Reaction reaction) {
+    public Post(Long id, String title, String body, String authorName, Reaction reaction, String type) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.authorName = authorName;
         this.reaction = reaction;
+        this.type = type;
     }
 
     public Long getId() {
@@ -89,14 +88,6 @@ public class Article {
         this.comments = comments;
     }
 
-    public List<Topic> getTopics() {
-        return topics;
-    }
-
-    public void setTopics(List<Topic> topics) {
-        this.topics = topics;
-    }
-
     public Reaction getReaction() {
         return reaction;
     }
@@ -111,5 +102,13 @@ public class Article {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

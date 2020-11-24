@@ -1,4 +1,4 @@
-package se.kth.sda.tech.articles;
+package se.kth.sda.tech.posts;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -7,8 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ArticleRepo extends JpaRepository<Article, Long> {
-    List<Article> findAllByTopics_id(Long topicId);
+public interface PostRepo extends JpaRepository<Post, Long> {
 
-    List<Article> findAll(Sort sort);
+    List<Post> findAll(Sort sort);
+
+    List<Post> findAllByType(String type);
+
 }

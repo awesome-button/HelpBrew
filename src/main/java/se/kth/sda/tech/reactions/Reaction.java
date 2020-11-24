@@ -1,6 +1,6 @@
 package se.kth.sda.tech.reactions;
 
-import se.kth.sda.tech.articles.Article;
+import se.kth.sda.tech.posts.Post;
 import se.kth.sda.tech.comments.Comment;
 
 import javax.persistence.*;
@@ -15,7 +15,7 @@ public class Reaction {
     private Integer numDislike;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "reaction")
-    private Article article;
+    private Post article;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "reaction")
     private Comment comment;

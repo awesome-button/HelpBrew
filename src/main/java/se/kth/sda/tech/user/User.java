@@ -3,7 +3,7 @@ package se.kth.sda.tech.user;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
-import se.kth.sda.tech.articles.Article;
+import se.kth.sda.tech.posts.Post;
 import se.kth.sda.tech.comments.Comment;
 
 import javax.persistence.*;
@@ -35,7 +35,7 @@ public class User {
 
     @OneToMany
     @JoinColumn(name = "user_id")
-    private List<Article> article;
+    private List<Post> post;
 
     @OneToMany
     @JoinColumn(name = "user_id")
