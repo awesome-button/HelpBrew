@@ -6,6 +6,7 @@ import Api from "../../api/Api";
 export default function PostCard({ post, onDeleteClick, onUpdateClick, user }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const [body, setBody] = useState("");
+  // const [topics, setTopics] = useState("");
   const [reaction, setReaction] = useState(post.reaction);
 
   const handleUpdateClick = () => {
@@ -39,15 +40,19 @@ export default function PostCard({ post, onDeleteClick, onUpdateClick, user }) {
         {/* 1-1 Post part */}
         <section className="post">
           <h4>
-            <i className="fas fa-newspaper"></i>{" "}
+          {post.title}
+            {/* <i className="fas fa-newspaper"></i>{" "}
             {post.body.length > 55
               ? post.body.substring(0, 55) + "..."
-              : post.body}
+              : post.body} */}
           </h4>
           <div className="poster">
             <i className="fas fa-user-alt"></i> {post.user.name}(
           <i className="fas fa-envelope"></i> {post.user.email})
         </div>
+          {/* <div className="post-text">
+            <p>{post.topics}</p>
+          </div> */}
           <div className="post-text">
             <p>{post.body}</p>
           </div>
