@@ -50,6 +50,7 @@
 
 .error-body.welcome {
   width: 90%;
+
   justify-self: start;
 }
 
@@ -87,7 +88,7 @@
 @media (min-width: 800px) {
   .error-wrapper .modal-box.welcome {
     width: 1000px;
-    height: 650px;
+    height: 670px;
     max-width: 80vw;
   }
 
